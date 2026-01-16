@@ -17,6 +17,11 @@
             --accent-gold: #D4AF37;
         }
 
+        html { /* ensure full-viewport background is applied */
+            background-color: var(--light-gray);
+            height: 100%;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +32,8 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--light-gray);
             color: var(--text-dark);
-            width: 720px; /* Fixed width for poster format as requested */
+            width: 100%;
+            max-width: 720px; /* Fixed width for poster format as requested */
             margin: 0 auto;
             min-height: 100vh;
             overflow-x: hidden;
@@ -104,7 +110,7 @@
             left: 0;
             width: 100%;
             height: 20px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23F4F7F6'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-4[...]"
             background-size: cover;
             z-index: 10;
         }
@@ -540,7 +546,7 @@
             left: 0;
             width: 100%;
             height: 20px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23001F3F'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,[...]"
             background-size: cover;
         }
 
@@ -615,8 +621,12 @@
             z-index: 1;
         }
         .logo-img{
-            width: 20%;
-            height: 20%;
+-            width: 50%;
+-            height: 50%;
++
+            max-width: 120px;
++            height: auto;
++            display: block;
 
         }
         .map-content {
@@ -650,7 +660,7 @@
         /* Wave divider */
         .wave-divider {
             height: 30px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,[...]"
             background-size: cover;
         }
 
@@ -903,7 +913,7 @@
             <div class="story-img"></div>
             <div class="story-text">
                 <h3>The Kraken Philosophy</h3>
-                <p>We believe the best seafood stories start with the freshest catch. Our kitchen is anchored in the tradition of quality, bringing the bold flavors of the ocean directly to your plate. Every dish is prepared with passion, honoring the deep blue that provides for us.</p>
+                <p>We believe the best seafood stories start with the freshest catch. Our kitchen is anchored in the tradition of quality, bringing the bold flavors of the ocean directly to your plate[...]  
             </div>
         </div>
     </section>
@@ -997,10 +1007,4 @@
             const gallery = document.getElementById("galleryScroll");
             const scrollAmount = 265; // card width + gap
             gallery.scrollBy({
-                left: scrollAmount * direction,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-</body>
-</html>
+                left: scrollAmount * direction,[...] 
